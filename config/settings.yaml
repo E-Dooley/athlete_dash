@@ -1,0 +1,73 @@
+sync:
+  # Full backfill target — use sync windows below to pull gradually
+  start_date: 2025-03-01
+  request_delay_seconds: 2.5
+  # Initial scope: June only (Twin Cities prep sample + current-year compare)
+  windows:
+    - start: 2025-06-01
+      end: 2025-06-30
+      label: June 2025
+    - start: 2026-06-01
+      end: 2026-06-30
+      label: June 2026
+
+races:
+  twin_cities_marathon:
+    date: 2025-10-05
+    label: Twin Cities Marathon
+  chicago_marathon:
+    date: 2026-10-11
+    label: Chicago Marathon
+
+compare:
+  weeks_before_race: 20
+  week_starts_on: monday
+
+activity_categories:
+  run:
+    - Run
+    - TrailRun
+    - VirtualRun
+  cross_train:
+    - Ride
+    - Swim
+    - Walk
+    - Hike
+    - Elliptical
+    - Rowing
+  strength:
+    - WeightTraining
+    - Workout
+    - Crossfit
+  mobility:
+    label: Mobility
+    types:
+      - PhysicalTherapy
+      - Yoga
+      - Stretching
+  other: []
+
+effort_zones:
+  hr:
+    max_hr: 200
+    ahr_max: 156
+  pace:
+    marathon_pace: 465  # 7:45/mi in seconds
+    mp_band_seconds: 15
+  priority: hr_then_pace
+
+workout_detection:
+  weekday: wednesday
+  title_keywords:
+    - speedsters
+
+garmin:
+  lifestyle_keywords:
+    stretch:
+      - stretch
+      - stretching
+      - yoga
+    roll:
+      - roll
+      - foam
+      - rolling
